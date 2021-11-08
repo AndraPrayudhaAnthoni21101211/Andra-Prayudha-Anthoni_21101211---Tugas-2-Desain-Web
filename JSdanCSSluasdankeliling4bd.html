@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Menghitung Luas dan Keliling Persegi Panjang</title>
+
+        <style>
+
+            body
+            {
+                background-color: grey;
+            }
+            h1
+            {
+                text-align: center;
+                font-family: cursive;
+                color: white;
+            }
+            .divPp
+            {
+                position:absolute;
+                left: 11em;
+                top: 7em;
+                width: 400px;
+            }
+            .tablePp
+            {
+                border-style: none;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th
+            {
+                background-color: rgb(11, 184, 228);
+                color: white;
+                font-family: cursive;
+                padding: 9px;
+                border: none;
+                font-size: 18px;
+                border-radius: 15px;
+            }
+            td
+            {
+                color: whitesmoke;
+                font-family: cursive;
+                border: none;
+            }
+            input[type=text]
+            {
+                padding: 10px;
+                width: 380px;
+                height: 8px;
+                border-style: solid;
+                border-color: #6d6e6a;
+                border-radius: 15px;
+                font-size: 16px;
+            }
+            input[type=text]:disabled
+            {
+                background-color: white;
+            }
+            button
+            {
+                width: 100%;
+                height: 37px;
+                font-family: Righteous;
+                background-color: orange;
+                border: none;
+                border-radius: 15px;
+                color: white;
+                padding: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                margin-top: 3px;
+            }
+
+            .divS
+            {
+                position:absolute;
+                left: 11em;
+                top: 32em;
+                width: 400px;
+                height: 31em;
+            }
+            .tableS
+            {
+                border-style: none;
+                border-collapse: collapse;
+                width: 100%; 
+            }
+            .divL
+            {
+                position: absolute;
+                right: 11em;
+                top: 7em;
+                width: 400px;
+            }
+            .tableL
+            {
+                border-style: none;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            .divJ
+            {
+                position: absolute;
+                right: 11em;
+                top: 32em;
+                width: 400px;
+            }
+            .tableJ
+            {
+                border-style: none;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+        </style>
+    
+        <script type="text/javascript">
+            function hitung()
+            {
+                var Luas, Keliling, Panjang, Lebar;
+
+                Panjang = parseInt(document.getElementById("panjangPp").value);
+                Lebar = parseInt(document.getElementById("lebarPp").value);
+
+                Keliling = 2 * (Panjang * Lebar);
+                Luas = Panjang * Lebar;
+                document.getElementById("kelilingPp").value = Keliling;
+                document.getElementById("luasPp").value = Luas;
+            }
+            function hitungS()
+            {
+                var Luas, Keliling, Tinggi, Alas, Sisi2, Sisi3;
+
+                Alas = parseInt(document.getElementById("alasS").value)
+                Tinggi = parseInt(document.getElementById("tinggiS").value)
+                Sisi2 = parseInt(document.getElementById("sisi2").value)
+                Sisi3 = parseInt(document.getElementById("sisi3").value)
+
+                Keliling = Alas + Sisi2 + Sisi3;
+                Luas = 1/2 * Alas * Tinggi;
+                document.getElementById("kelilingS").value = Keliling;
+                document.getElementById("luasS").value = Luas;
+            }
+            function hitungL()
+            {
+                var Jarijari, Keliling, Luas;
+
+                Jarijari = parseInt(document.getElementById("r").value);
+
+                Keliling = 2 * 3.14 * Jarijari;
+                Luas = 3.14 * (Jarijari * Jarijari);
+                document.getElementById("kelilingL").value = Keliling;
+                document.getElementById("luasL").value = Luas;
+            }
+            function hitungJ()
+            {
+                var Alas, Tinggi, Sisimiring, Keliling, Luas;
+                
+                Alas = parseInt(document.getElementById("alasJ").value);
+                Tinggi = parseInt(document.getElementById("tinggiJ").value);
+                Sisimiring = parseInt(document.getElementById("sisimiringJ").value);
+
+                Keliling = (2 * Alas) + (2 * Sisimiring);
+                Luas = Alas * Tinggi;
+                document.getElementById("kelilingJ").value = Keliling;
+                document.getElementById("luasJ").value = Luas;
+            }
+            function hapusPp()
+            {
+                document.getElementById("luasPp").value = "";
+                document.getElementById("kelilingPp").value = "";
+                document.getElementById("panjangPp").value = "";
+                document.getElementById("lebarPp").value = "";
+            }
+            function hapusJ()
+            {
+                document.getElementById("alasJ").value = "";
+                document.getElementById("sisimiringJ").value = "";
+                document.getElementById("tinggiJ").value = "";
+                document.getElementById("luasJ").value = "";
+                document.getElementById("kelilingJ").value = "";
+            }
+            function hapusL()
+            {
+                document.getElementById("r").value = "";
+                document.getElementById("luasL").value = "";
+                document.getElementById("kelilingL").value = "";
+            }
+            function hapusS()
+            {
+                document.getElementById("alasS").value = "";
+                document.getElementById("tinggiS").value = "";
+                document.getElementById("sisi2").value = "";
+                document.getElementById("sisi3").value = "";
+                document.getElementById("luasS").value = "";
+                document.getElementById("kelilingS").value = "";
+            }
+            
+        </script>
+
+    </head>
+    <body onload="alert ('Selamat Datang!');">
+        <h1>Menghitung Luas dan Keliling 4 Bangun Datar</h1>
+        <div class="divPp">
+            <table class="tablePp">
+                <thead>
+                    <tr>
+                        <th>Persegi Panjang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Masukkan lebar persegi panjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="lebarPp"></td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan panjang persegi panjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="panjangPp"></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hitung()">Hitung</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Luas persegi panjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="luasPp" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Keliling persegi panjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="kelilingPp" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hapusPp()">Hapus</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="divS">
+            <table class="tableS">
+                <thead>
+                    <tr>
+                        <th>Segitiga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Masukkan tinggi segitiga</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="tinggiS"></td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan alas atau sisi pertama segitiga</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="alasS"></td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan sisi kedua segitiga</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="sisi2"></td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan sisi ketiga segitiga</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="sisi3"></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hitungS()">Hitung</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Luas segitiga</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="luasS" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Keliling segitiga</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="kelilingS" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hapusS()">Hapus</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="divL">
+            <table class="tableL">
+                <thead>
+                    <tr>
+                        <th>Lingkaran</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Masukkan jari-jari lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="r"></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick=hitungL()>Hitung</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Luas lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="luasL" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Keliling lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="kelilingL" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hapusL()">Hapus</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="divJ">
+            <table class="tableJ">
+                <thead>
+                    <tr>
+                        <th>Jajargenjang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Masukkan tinggi jajargenjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="tinggiJ"></td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan alas jajargenjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="alasJ"></td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan sisi miring jajargenjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="sisimiringJ"></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hitungJ()">Hitung</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Luas jajargenjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="luasJ" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Keliling jajargenjang</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="kelilingJ" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hapusJ()">Hapus</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </body>
+
+</html>
